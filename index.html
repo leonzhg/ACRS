@@ -10,6 +10,12 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        #landing-page.hidden {
+            display: none !important;
+        }
+        #main-content.hidden {
+            display: none !important;
+        }
         .persona-link img {
             cursor: pointer;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -49,11 +55,55 @@
             border: 2px solid white;
             box-shadow: 0 0 0 2px #dc2626;
         }
+        .password-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 20rem;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 18px;
+            padding: 4px;
+        }
+        .toggle-password:hover {
+            color: #dc2626;
+        }
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-6 md:p-8">
-    
-    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <header class="bg-red-700 text-white p-6 flex justify-between items-center">
+            <p class="text-lg font-semibold tracking-wide">Canada Revenue Agency | ACRS User Personas</p>
+        </header>
+        <div class="p-6 md:p-12 text-center space-y-8">
+            <div class="space-y-4">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">ACRS User Personas</h1>
+            </div>
+            <div class="space-y-4">
+                <div class="password-container">
+                    <input type="password" id="password-input" placeholder="Enter password" class="w-full px-4 py-3 pr-12 border-2 border-gray-300 rounded-lg focus:border-red-700 focus:outline-none text-center">
+                    <button id="toggle-password" type="button" class="toggle-password" title="Show/Hide password">�</button>
+                </div>
+                <button id="unlock-button" class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg shadow-md">
+                    Access
+                </button>
+                <p id="error-message" class="text-red-600 font-semibold hidden">Incorrect password. Please try again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <header class="bg-red-700 text-white p-6 flex justify-between items-center">
             <p class="text-lg font-semibold tracking-wide">Canada Revenue Agency | ACRS User Personas</p>
             <button id="back-to-overview" class="hidden bg-white text-red-700 font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors">
@@ -495,6 +545,45 @@
                         <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Wishes</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">Automated migration validation, real-time dashboards for migration status, and a culture of data integrity across all teams.</p></div></div>
                     </div>
                 </main>`;
+        });
+    </script>
+
+    <script>
+        // Password validation
+        const correctPassword = 'ACRS2026@PPMO';
+        const unlockButton = document.getElementById('unlock-button');
+        const passwordInput = document.getElementById('password-input');
+        const errorMessage = document.getElementById('error-message');
+        const togglePasswordButton = document.getElementById('toggle-password');
+
+        unlockButton.addEventListener('click', function() {
+            if (passwordInput.value === correctPassword) {
+                document.getElementById('landing-page').classList.add('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+            } else {
+                errorMessage.classList.remove('hidden');
+                passwordInput.value = '';
+            }
+        });
+
+        // Allow Enter key to submit
+        passwordInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                unlockButton.click();
+            }
+        });
+
+        // Toggle password visibility
+        togglePasswordButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                togglePasswordButton.textContent = '🔓';
+            } else {
+                passwordInput.type = 'password';
+                togglePasswordButton.textContent = '🔐';
+            }
         });
     </script>
 </body>
