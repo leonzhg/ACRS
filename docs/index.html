@@ -52,14 +52,45 @@
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-6 md:p-8">
-        <script>
-        // Password protection - Note: This is NOT secure, password is visible in source code
-        const correctPassword = "ACRS2026@PPMO";
-        const userPassword = prompt("Enter password to view ACRS User Personas:");
-        if (userPassword !== correctPassword) {
-            document.body.innerHTML = "<div style='text-align:center; padding:50px; font-family:Arial, sans-serif;'><h1>Access Denied</h1><p>Incorrect password. Please contact the administrator.</p></div>";
-        }
-    </script>
+
+    <!-- Password Protection Page -->
+    <div id="password-page" class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full">
+            <div class="text-center mb-6">
+                <div class="bg-red-700 text-white py-4 px-6 rounded-lg mb-4">
+                    <h1 class="text-2xl font-bold">ACRS User Personas</h1>
+                    <p class="text-sm mt-1">Canada Revenue Agency</p>
+                </div>
+                <p class="text-gray-600 mb-4">This page is password protected</p>
+            </div>
+            <form id="password-form" onsubmit="return checkPassword(event);">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+                <div id="error-message" class="text-red-600 text-sm mb-4 hidden">
+                    Incorrect password. Please try again.
+                </div>
+                <button 
+                    type="submit" 
+                    class="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                    Access Page
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden by default) -->
+    <div id="main-content" style="display:none;">
     
     <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <header class="bg-red-700 text-white p-6 flex justify-between items-center">
@@ -505,6 +536,29 @@
                 </main>`;
         });
     </script>
+        
+    </div> <!-- End main-content -->
+
+    <!-- Password Checking Script -->
+    <script>
+        function checkPassword(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const correctPassword = 'ACRS2026@PPMO';
+            
+            if (password === correctPassword) {
+                document.getElementById('password-page').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                document.getElementById('error-message').classList.remove('hidden');
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+            return false;
+        }
+    </script>
+
 </body>
+
 
 
