@@ -257,12 +257,12 @@
                         <p class="text-gray-400 text-xs italic mt-2 mb-1 font-normal">Conducts audits and ensures compliance adherence.</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <a data-target="#robert-details" class="persona-link">
-                            <img class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white" src="images/Robert.png" alt="Profile picture of Robert">
+                        <a data-target="#samuel-details" class="persona-link">
+                            <img class="w-32 h-32 rounded-full object-cover shadow-md border-4 border-white" src="images/Samuel.png" alt="Profile picture of Samuel">
                         </a>
-                        <h2 class="mt-4 text-xl font-semibold text-gray-800">Robert</h2>
-                        <p class="text-gray-600">Team Leader</p>
-                        <p class="text-gray-400 text-xs italic mt-2 mb-1 font-normal">Uses BI to set targets and measure improvements.</p>
+                        <h2 class="mt-4 text-xl font-semibold text-gray-800">Samuel</h2>
+                        <p class="text-gray-600">Data Engineer</p>
+                        <p class="text-gray-400 text-xs italic mt-2 mb-1 font-normal">Focuses on data preparation and engineering for BI.</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <a data-target="#victor-details" class="persona-link">
@@ -280,6 +280,7 @@
             <div id="Isabelle-details" class="persona-detail-card"></div>
             <div id="simon-details" class="persona-detail-card"></div>
             <div id="valerie-details" class="persona-detail-card"></div>
+            <div id="samuel-details" class="persona-detail-card"></div>
             <div id="robert-details" class="persona-detail-card"></div>            <div id="victor-details" class="persona-detail-card"></div>            <div id="alexandra-details" class="persona-detail-card"></div>
             <div id="marcus-details" class="persona-detail-card"></div>
             <div id="diana-details" class="persona-detail-card"></div>
@@ -378,21 +379,21 @@
                     </div>
                 </main>`;
 
-            // 4. Robert (Original)
-            document.getElementById('robert-details').innerHTML = `
+            // 4. Samuel (Data Engineer)
+            document.getElementById('samuel-details').innerHTML = `
                 <main class="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 md:p-8">
                     <div class="md:col-span-1 flex flex-col items-center text-center">
-                        <img class="w-40 h-40 rounded-full object-cover shadow-md border-4 border-white" src="images/Robert.png" alt="Profile picture of Robert">
-                        <h1 class="text-4xl font-bold text-gray-800 mt-4">Robert</h1><p class="text-gray-600 text-lg">Team Leader</p><div class="w-full bg-gray-200 h-px my-6"></div>
-                        <p class="text-lg italic text-gray-700 leading-relaxed">"I need a clear view of my team's performance and the overall compliance landscape. We can't manage what we can't measure."</p>
-                        <div class="w-full text-left mt-8 space-y-3 text-gray-700"><p><strong>Age:</strong> 52</p><p><strong>Education:</strong> MBA</p><p><strong>Occupation:</strong> Team Leader, CPB/ABSB</p><p><strong>Marital Status:</strong> Married</p><p><strong>Environment:</strong> Office</p></div>
+                        <img class="w-40 h-40 rounded-full object-cover shadow-md border-4 border-white" src="images/Samuel.png" alt="Profile picture of Samuel">
+                        <h1 class="text-4xl font-bold text-gray-800 mt-4">Samuel</h1><p class="text-gray-600 text-lg">Data Engineer</p><div class="w-full bg-gray-200 h-px my-6"></div>
+                        <p class="text-lg italic text-gray-700 leading-relaxed">"Data preparation is the foundation of reliable insights. I build the pipelines that ensure data quality and accessibility."</p>
+                        <div class="w-full text-left mt-8 space-y-3 text-gray-700"><p><strong>Age:</strong> 34</p><p><strong>Education:</strong> BA Info System Mgmt, BMSc Data Science</p><p><strong>Occupation:</strong> Data Engineer, IT</p><p><strong>Marital Status:</strong> Single</p><p><strong>Environment:</strong> Office</p></div>
                     </div>
                     <div class="md:col-span-2 space-y-6">
-                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Attributes</h2></div><div class="content pt-4 space-y-6" style="display:block;"><div><h3 class="font-semibold text-gray-700 mb-2">Domain Knowledge</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 80%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Novice</span><span>Intermediate</span><span>Expert</span></div></div><div><h3 class="font-semibold text-gray-700 mb-2">Trust in System</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 25%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Low</span><span>Medium</span><span>High</span></div></div><div><h3 class="font-semibold text-gray-700 mb-2">Confidence</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 75%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Low</span><span>Medium</span><span>High</span></div></div></div></div>
-                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Summary</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">Robert leads a team of officers like Isabelle. He is responsible for the operational efficiency of the entire error correction and RFI compliance lifecycle. He is a strategic thinker who needs high-level, real-time data to manage workloads and track performance.</p></div></div>
-                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Tasks & User Stories</h2></div><div class="content pt-4" style="display:block;"><ul class="list-decimal list-inside space-y-3 text-gray-700"><li>Monitor the queue of filings awaiting error correction and manage team workload.</li><li>Use functional reporting tools to track KPIs like error rates and time-to-resolution.</li><li>As a team leader, I want to have the ability to manually override an automated late-filing penalty so that I can address exceptional circumstances.</li><li>Ensure his team has the tools and training to handle their caseload effectively.</li></ul></div></div>
-                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Frustrations</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">The current reliance on manual spreadsheets to track work-in-progress is inefficient and lacks real-time visibility; inability to easily generate ad-hoc reports on compliance trends or team performance without IT intervention; and the risk of his team not meeting the 15-day deadline for responding to partner jurisdictions due to system inefficiencies.</p></div></div>
-                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Wishes</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">A near real-time integrated dashboard for diffrent workloads that can monitor inventory levels and KPIs; Ideally it can be self-serve, ad-hoc reporting with analytics capabilities; and automated alerts for potential service level breaches or systemic error trends.</p></div></div>
+                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Attributes</h2></div><div class="content pt-4 space-y-6" style="display:block;"><div><h3 class="font-semibold text-gray-700 mb-2">Domain Knowledge</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 90%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Novice</span><span>Intermediate</span><span>Expert</span></div></div><div><h3 class="font-semibold text-gray-700 mb-2">Trust in System</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 70%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Low</span><span>Medium</span><span>High</span></div></div><div><h3 class="font-semibold text-gray-700 mb-2">Confidence</h3><div class="attribute-bar"><div class="attribute-dot" style="left: 85%;"></div></div><div class="flex justify-between text-sm text-gray-500 mt-1 px-1"><span>Low</span><span>Medium</span><span>High</span></div></div></div></div>
+                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Summary</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">Samuel is a data engineer responsible for preparing and engineering data for business intelligence purposes. He focuses on data cleansing, transformation, integration, and building ETL pipelines to support analytics, reporting, and compliance monitoring.</p></div></div>
+                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Tasks & User Stories</h2></div><div class="content pt-4" style="display:block;"><ul class="list-decimal list-inside space-y-3 text-gray-700"><li>As a data engineer, I want to design and implement ETL pipelines to extract, transform, and load data from various sources.</li><li>As a data engineer, I want to clean and standardize data to ensure quality and consistency for BI tools.</li><li>As a data engineer, I want to integrate data from multiple systems into a centralized data warehouse.</li><li>As a data engineer, I want to optimize data processing for performance and scalability.</li></ul></div></div>
+                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Frustrations</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">Dealing with inconsistent data formats from legacy systems; performance bottlenecks in data processing; and the challenge of integrating disparate data sources without losing data integrity.</p></div></div>
+                        <div class="details-section open"><div class="header pb-2 border-b-2 border-gray-200"><h2 class="text-2xl font-bold text-gray-800">Wishes</h2></div><div class="content pt-4" style="display:block;"><p class="text-gray-700 leading-relaxed">Modern data engineering tools with automated pipeline management; real-time data processing capabilities; and integrated data governance features to ensure compliance and security.</p></div></div>
                     </div>
                 </main>`;
             // 4.5 Victor (Auditors)
